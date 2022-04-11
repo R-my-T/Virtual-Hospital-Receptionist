@@ -1,0 +1,42 @@
+<html>
+  <style>
+    .bg-image {
+      background-image: url("https://image.freepik.com/free-photo/blur-hospital_1203-7957.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .bg-text {
+      background-color: rgb(255, 255, 255); 
+      background-color: rgba(76, 158, 179, 0.4); 
+      color: rgb(50, 47, 90);
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+      <form action="{{ url_for ('login') }}" method="POST">
+          <center>
+          <h3>Log In</h3>
+          
+          Hospital ID <br><input type="text" name="hid" /><br><br>
+      
+          Password <br><input type="password" name="pswd" /><br><br>
+      
+          <input type="submit" value="submit" /><br>
+          </center>
+      </form>
+    </div> 
+  </body>
+</html>

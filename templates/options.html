@@ -1,0 +1,59 @@
+<html>
+    <style>
+        .bg-image {
+            background-image: url("https://img.freepik.com/free-photo/blurred-interior-hospital-clinical-with-people-abstract-medical-background_1484-1309.jpg?size=626&ext=jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .button{
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .bg-text {
+            background-color: rgb(255, 255, 255); 
+            background-color: rgba(76, 158, 179, 0.4); 
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            font-size: 23;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .button1 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #0C6170;
+        }
+        .button1:hover {
+            background-color: #0C6170;
+            color: white;
+        }
+    </style>
+    <body>
+        <div class="bg-image"></div>
+        <div class='bg-text'>
+            <h2>What would you like to do?</h2><br>
+            <!--a href="{{url_for('doctor_login')}}"><button class="button button1">Open Doctor view</button></a-->
+            <a href="{{url_for('register_doctor')}}"><button class="button button1">Register Doctor</button></a>
+            <a href="{{url_for('reception')}}"><button class="button button1">Call Receptionist</button></a>
+
+        </div>
+    </body>
+</html>

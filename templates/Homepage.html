@@ -1,0 +1,80 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .bg-image {
+            background-image: url("https://image.freepik.com/free-photo/blur-hospital_1203-7957.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .bg-text {
+            background-color: rgb(192, 236, 247);
+            background-color: rgba(76, 158, 179, 0.4); 
+            color: rgb(50, 47, 90);
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .button1 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #0C6170;
+        }
+
+        .button1:hover {
+            background-color: #0C6170;
+            color: white;
+        }
+
+    </style>
+
+    <body>
+       <br>
+       <div class="bg-image"></div>
+       <div class='bg-text'>
+        
+        <center>
+            <font color='red'>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            </font>
+            <h1>Hey There! Hire your virtual medical receptionist!</h1><br>
+
+            <a href="{{url_for('register_hospital')}}"><button class="button button1">Register</button></a>
+
+            <a href="{{url_for('login')}}"><button class="button button1">Admin Log In</button></a>
+
+            <a href="{{url_for('doctor_login')}}"><button class="button button1">Doctor Log In</button></a>
+            
+        </center> 
+        </div>      
+    </body>
+</html>

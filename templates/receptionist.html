@@ -1,0 +1,124 @@
+<html>
+  <style>
+    body {
+    background-image: url("https://img.freepik.com/free-photo/blurred-interior-hospital-clinical-with-people-abstract-medical-background_1484-1309.jpg?size=626&ext=jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    header {
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    }
+    .bg-text {
+      background-color: rgb(255, 255, 255); 
+      background-color: rgba(76, 158, 179, 0.4); 
+      color: rgb(50, 47, 90);
+      font-weight: bold;
+      position: absolute;
+      top: 8%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      text-align: center;
+      }  
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    nav{
+      background-color: rgb(255, 255, 255); 
+      background-color: rgba(76, 158, 179, 0.4);
+      margin-top: 15%;
+      float: left;
+      width: 40%;
+      padding: 20px;
+    }
+
+    content {
+    background-color: rgb(255, 255, 255); 
+    background-color: rgba(76, 158, 179, 0.4);
+      margin-top: 15%;
+      float: right;
+      width: 40%;
+      padding: 20px;
+    }
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #0C6170;
+    }
+    .button1:hover {
+      background-color: #0C6170;
+      color: white;
+    }
+    footer {
+      padding: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      nav, content {
+      width: 100%;
+      height: auto;
+      }
+    }
+  </style>
+
+  <body>
+    <div class='bg-image'></div>
+    <div class='header'>
+      {% for item in hname %}
+        <div class='bg-text'><h1>Welcome to {{item.0}}</h1>
+        </div>
+        {% endfor %}
+    </div>    
+    <section>
+      <nav>
+        <center>
+          <h2>Waiting Line</h2>
+          <ol>
+          {% for item in pat %}
+              <li><h3>Name: {{item.0}}</h3><p>Visiting Doctor: {{item.1}}</p></li>
+          {% endfor %}
+          </ol>
+          <a href="{{url_for('addpatient')}}"><button class="button button1">Add Patient</button></a>
+        </center>
+      </nav>
+
+      <content><center>
+            <h2>Available Doctors</h2>
+            <ul>
+            {% for item in doc %}
+                <li><h3>Doctor ID: {{item.0}}<br>Name: {{item.1}}<br><em>{{item.2}}</em><br>Available from: {{item.3}} to {{item.4}}</h3></li>
+            {% endfor %}
+            </ul>
+
+      </center></content>
+    </section> 
+    <footer>
+        <p>All doctors</p><br>
+        <a href="{{url_for('logout_hospital')}}"><h5>Log Out</h5></a>
+    </footer> 
+  </body>    
+</html>
