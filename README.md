@@ -17,7 +17,6 @@ Stage 3:
   - Finished implementing the session management.
 
 CONTENTS
-  - Hospital : Contains the files of the python virtual environment used for this project.
   - Flask session : Created by flask to manage sessions.
   - templates : Contains all the html templates rendered by flask.
   - hospital_db : The SQLite Database file which contains the tables required for this project.
