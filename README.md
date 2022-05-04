@@ -1,5 +1,5 @@
 # Virtual-Hospital-Receptionist
-A virtual hospital receptionist that can manage the queue, inform the doctors about the waiting patients, send a note from patients to the doctor, alert emergencies etc.
+A virtual hospital receptionist is a web application that can manage the queue, inform the doctors about the waiting patients, send a note from patients to the doctor, alert emergencies etc.
 
 Stage 1:
   - Came up with the VIRTUAL HOSPITAL RECEPTIONIST idea and laid out a framework for implementing it as a webapp that can be used by hospitals.
